@@ -1,22 +1,22 @@
-// Class of Item  
-public class Item {
 
-		String itemName;
-		int itemCode;
-		double itemPrice;
-		int itemQuantity;
+/* This class used to save item name, 
+ * code and price.
+ */
+public class Item {
 	
-		/* Constructor of Item
-		 * code of item
-		 * Name of item
-		 * Price of item
-		 */
-		Item(int code, String name, Double price  )
-		{
-			itemName = name;
-			itemCode = code;
-			itemPrice = price;
-			itemQuantity = 0;
-			
-		}
+	String itemName;
+	int itemCode;
+	double itemPrice;
+
+	/* Constructor of Item
+	 *@param code This is code of Item
+	 *@param name This is name of Item
+	 *@param price This is price of Item
+	 */
+	Item(int code, String name, Double price  )
+	{
+		itemName = name;
+		itemCode = code;
+		itemPrice = price;
+	}
 }
