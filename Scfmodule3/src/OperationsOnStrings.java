@@ -1,4 +1,3 @@
-import java.util.Scanner;
 
 /*
  * This class is used to various operations on Strings like
@@ -10,20 +9,22 @@ public class OperationsOnStrings {
 	 * This method is used to compare to string.
 	 * @param firstString first string to be compare.
 	 * @param secondString second string to be compare.
-	 * @return int this return 1 if string equal and return 0 if not equal.
+	 * @return int this return 0 if string equal.
 	 */
-	public static int compareTwoString(String firstString, String secondString) {
-		if (firstString.length() != secondString.length()) {
-			return 0;
+	public int compareTwoString(String firstString, String secondString) {
+		
+		if(firstString == null || secondString == null) {
+		    throw new AssertionError(" string is null ");
 		}
-
+	
 		for (int index = 0; index < firstString.length(); index++) {
-			if (firstString.charAt(index) != secondString.charAt(index)) {
-				return 0;
+			
+			if (firstString.charAt(index) - secondString.charAt(index) != 0) {
+				return firstString.charAt(index) - secondString.charAt(index);
 			}
 		}
 
-		return 1;
+		return 0;
 	}
 
 	/*
@@ -31,8 +32,12 @@ public class OperationsOnStrings {
 	 * @param reverseToBeString this is string which going to reverse.
 	 * @return String This return reverse of any string.
 	 */
-	public static String reverseString(String reverseToBeString) {
+	public String reverseString(String reverseToBeString) {
 
+        if(reverseToBeString == null ) {
+		    throw new AssertionError(" string is null ");
+		}
+		
 		String reverse = "";
 
 		for (int index = reverseToBeString.length() - 1; index >= 0; index--) {
@@ -49,12 +54,17 @@ public class OperationsOnStrings {
 	 * @return String This return lowercase characters with uppercase and
 	 * vice-versa.
 	 */
-	public static String changedString(String changedToBeString) {
+	public String changedString(String changedToBeString) {
+		
+		 if(changedToBeString == null ) {
+		    throw new AssertionError(" string is null ");
+		}
+		
 		String newString = "";
 
 		for (int index = 0; index < changedToBeString.length(); index++) {
-			if (changedToBeString.charAt(index) >= 'A'
-					&& changedToBeString.charAt(index) <= 'Z') {
+			
+			if (changedToBeString.charAt(index) >= 'A' && changedToBeString.charAt(index) <= 'Z') {
 				newString += (char) (changedToBeString.charAt(index) + 32);
 			} else {
 				newString += (char) (changedToBeString.charAt(index) - 32);
@@ -69,12 +79,17 @@ public class OperationsOnStrings {
 	 * @param newString this is string in which find largest string.
 	 * @return String This return largest word of a string.
 	 */
-	public static String findLargestString(String newString) {
+	public String findLargestString(String newString) {
+	     if(newString == null ) {
+		    throw new AssertionError(" string is null ");
+		}
 		String largestString = "";
 		String word = "";
 
 		for (int index = 0; index < newString.length(); index++) {
+			
 			if (newString.charAt(index) == ' ') {
+				
 				if (largestString.length() <= word.length()) {
 					largestString = word;
 				}
@@ -90,36 +105,4 @@ public class OperationsOnStrings {
 
 		return largestString;
 	}
-
-	public static void main(String[] args) {
-
-		Scanner in = new Scanner(System.in);
-		System.out.println("Please enter a string");
-		String firstString = in.nextLine();
-		System.out.println("Please enter a string");
-		String secondString = in.nextLine();
-		int checkEqual;
-
-		checkEqual = compareTwoString(firstString, secondString);
-		System.out.println("String " + firstString + "equal to string " + secondString + " is " + checkEqual);
-
-		System.out.println("Please enter a string");
-
-		String reverseToBeString = in.nextLine();
-		String newString;
-
-		newString = reverseString(reverseToBeString);
-
-		System.out.println("Reverse of string " + reverseToBeString + " is " + newString);
-
-		System.out.println("Please enter a string");
-		String setString = in.nextLine();
-		System.out.println("Chenged in string " + setString + " is " + changedString(setString));
-
-		System.out.println("Please enter a string");
-		String checkLargest = in.nextLine();
-		System.out.println("Largest string of string " + checkLargest + " is " + findLargestString(checkLargest));
-		in.close();
-	}
-
 }
