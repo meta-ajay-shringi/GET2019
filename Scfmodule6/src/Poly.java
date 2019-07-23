@@ -27,7 +27,7 @@ public final class Poly {
 	 * @param value is the constant put in variable.
 	 * @return result of evaluation.
 	 */
-	int evaluate(float value) {
+	public int evaluate(float value) {
 		int result = 0;
 		
 		for (int index = 0; index < polynomial.length; index++) {
@@ -41,7 +41,7 @@ public final class Poly {
 	 * This method is used to compute the degree of a polynomial.
 	 * @return the {int} degree of the polynomial.
 	 */
-	int degree() {
+	public int degree() {
 		int degree = 0;
 		
 		for (int index = 0; index < polynomial.length; index++) {
@@ -74,7 +74,7 @@ public final class Poly {
 	 * @param polynomial2 is the second polynomial.
 	 * @return {Poly} the addition polynomial.
 	 */
-	static Poly addPoly(Poly polynomial1, Poly polynomial2) {
+	public static Poly addPoly(Poly polynomial1, Poly polynomial2) {
 		
 		int degree = Math.max(polynomial1.degree(), polynomial2.degree());
 		Poly addition = new Poly(degree + 1);
@@ -116,7 +116,7 @@ public final class Poly {
 	 * @return {Poly} multiplication polynomial
 	 */
 
-	static Poly multiplyPoly(Poly polynomial1, Poly polynomial2) {
+	public static Poly multiplyPoly(Poly polynomial1, Poly polynomial2) {
 
 		int degree = polynomial1.degree() + polynomial2.degree();
 		Poly multi = new Poly(degree + 1);
