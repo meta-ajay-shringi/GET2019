@@ -198,8 +198,7 @@ public final class SparseMatrix {
 	 * @param ColumnTobeChecked is the column index which is to be checked
 	 * @return  index where the indices are found
 	 */
-	public int indexAlreadyPresent(int[][] matrixToBeChecked,
-			int rowToBeChecked, int ColumnTobeChecked) {
+	public int indexAlreadyPresent(int[][] matrixToBeChecked, int rowToBeChecked, int ColumnTobeChecked) {
 		
 		int answer = -1;
 		
