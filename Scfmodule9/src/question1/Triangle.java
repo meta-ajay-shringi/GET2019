@@ -49,10 +49,10 @@ public class Triangle implements Shape
     	return date;
     }
 
-	/*
-	    * This method is used to calculate origin point.
-	    * @return This return origin point.
-	    */
+    /*
+     * This method is used to calculate origin point.
+     * @return This return origin point.
+     */
     public Point getOrigin() {
         return originPoint;
     }
@@ -77,18 +77,18 @@ public class Triangle implements Shape
         
 	}
 
-	   /*
-	    * This method is used to get shape type.
-	    * @return This return the type of shape.
-	    */
+	/*
+	 * This method is used to get shape type.
+	 * @return This return the type of shape.
+	 */
 	public String getShapeType() {
 		return "TRIANGLE";
 	}
 	
 	/*
-	    * This method is used to calculate distance between (0,0) to shape origin point.
-	    * @return, This return distance between (0,0) to shape origin point.
-	    */
+	 * This method is used to calculate distance between (0,0) to shape origin point.
+	 * @return, This return distance between (0,0) to shape origin point.
+	 */
 	public double getOriginDistance() {		
 		return Math.sqrt((originPoint.x - 0) * (originPoint.x - 0) + (originPoint.y - 0) * (originPoint.y - 0));
 	}
