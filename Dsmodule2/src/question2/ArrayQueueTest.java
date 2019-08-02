@@ -1,6 +1,6 @@
 package question2;
 
-import static org.junit.Assert.*;
+import static org.junit.AssertEquals;
 
 import org.junit.Before;
 import org.junit.Test;
