@@ -1,22 +1,21 @@
 package question1;
 
 import java.util.ArrayList;
-
 /**
  * This class is used to create a binary search tree.
  */
 public class BinarySearchTree {
-	public Node root;
-
+	Node root;
+	ArrayList<KeyValuePair> list;
+	ArrayList<KeyValuePair> listRange;
 	/**
 	 * constructor of a binarySearchtree for initialize root to null;
 	 */
 	BinarySearchTree() {
 		root = null;
+		list = new ArrayList<>();
+		listRange = new ArrayList<>();
 	}
-
-	public ArrayList<KeyValuePair> list = new ArrayList<>();
-	public ArrayList<KeyValuePair> listRange = new ArrayList<>();
 
 	/**
 	 * This method is used to insert data in bst.
@@ -65,7 +64,7 @@ public class BinarySearchTree {
 	 * @param data, data to be removed.
 	 * @return, this return root of bst.
 	 */
-	public Node remove(KeyValuePair data) {
+	public Node remove(int data) {
 		root = delete(root, data);
 		return root;
 
@@ -77,18 +76,17 @@ public class BinarySearchTree {
 	 * @param data, data to be deleted.
 	 * @return, this return root of bst.
 	 */
-	private Node delete(Node root, KeyValuePair data) {
+	private Node delete(Node root, int data) {
 
 		if (root == null) {
 
 			return root;
-		} else if (root.data.key > data.key) {
+		} else if (root.data.key > data) {
 			root.leftNode = delete(root.leftNode, data);
-		} else if (root.data.key < data.key) {
+		} else if (root.data.key < data) {
 			root.rightNode = delete(root.rightNode, data);
 		} else {
 			if ((root.leftNode == null) && (root.rightNode == null)) {
-				System.out.println("Hello");
 				root = null;
 			} else if (root.leftNode == null) {
 				root = root.rightNode;
@@ -99,7 +97,7 @@ public class BinarySearchTree {
 				Node temp = findMin(root.rightNode);
 				root.data.key = temp.data.key;
 				root.data.value = temp.data.value;
-				root.rightNode = delete(root.rightNode, temp.data);
+				root.rightNode = delete(root.rightNode, temp.data.key);
 
 			}
 		}
@@ -115,17 +113,18 @@ public class BinarySearchTree {
 	 */
 	public String getValue(int data) {
 
-		while (root != null) {
+		Node node = root;
+		while (node != null) {
 
-			if (root.data.key == data) {
-				return root.data.value;
-			} else if (root.data.key < data) {
-				root = root.rightNode;
+			if (node.data.key == data) {
+				return node.data.value;
+			} else if (node.data.key < data) {
+				node = node.rightNode;
 			} else
-				root = root.leftNode;
+				node = node.leftNode;
 		}
 
-		return null;
+		return "value no found";
 	}
 
 	/**

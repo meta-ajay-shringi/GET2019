@@ -1,6 +1,4 @@
 package question1;
-
-
 /**
  *  This class is used to create a node of bst.
  */

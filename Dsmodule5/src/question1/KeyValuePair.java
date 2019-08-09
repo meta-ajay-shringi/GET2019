@@ -1,7 +1,6 @@
 package question1;
-
 /**
- *  This class is used to create key value pair of data.
+ *  This class is used to represent key value pair of data.
  */
 public class KeyValuePair {
 	

@@ -1,106 +1,103 @@
 package question2;
-
 /**
- * This class is used to create Linked list of employees.
+ * this class implements employees methods
  */
 public class EmployeeList {
-	
-	Node linkedListHead;
-	Node linkedListTail;
-	
-	Node sortedLinkedListHead; //Head for sorted linked list
+	Employee linkedListHead;
+	Employee sortedLinkedListHead;
 	
 	/**
-	 * Constructor to initialize an empty list
+	 * Constructor to initialize list
 	 */
 	public EmployeeList()
 	{
 		linkedListHead = null;
-		linkedListTail = null;
 		sortedLinkedListHead = null;
 	}
 
 	/**
-	 * This method is used to add a node in the linked list.
-	 * @param employeeId is the data part of the node
+	 * This method is used to add a Employee in the linked list.
+	 * @param employeeName name of employee
+	 * @param employeeAge age of employee
+	 * @param employeeSalary salary of employee
 	 */
-	public void addNode(double employeeSalary, int employeeAge, String employeeName) {       
-        Node newNode = new Node(employeeSalary, employeeAge, employeeName);    
+	public void addEmployee(String employeeName,int employeeAge,double employeeSalary) {       
+        Employee newEmployee = new Employee(employeeName,employeeAge,employeeSalary);    
         
         if(linkedListHead == null) {    
-        	linkedListHead = newNode;    
-        	linkedListTail = newNode;    
+        	linkedListHead = newEmployee;  
+        	return;
         }    
-        else {    
-        	linkedListTail.next = newNode;    
-        	linkedListTail = newNode;    
-        }    
+        Employee temp=linkedListHead;
+        while(temp.next!=null){
+        	temp=temp.next;
+        }
+        temp.next=newEmployee;
+
     }
 	
 	/**
-	 * This method sorts the given employee list with the insertion sort method.
+	 * This method sorts the given employee list with insertion sort method.
 	 */
 	void sortEmployeeList()
 	{
-		Node currentNode = linkedListHead;
-		while(currentNode != null)
+		Employee currentEmployee = linkedListHead;
+		while(currentEmployee != null)
 		{
-			Node nextNode = currentNode.next;
+			Employee nextEmployee = currentEmployee.next;
 			if((sortedLinkedListHead == null) || 
-					(sortedLinkedListHead.getEmployeeSalaray() <= currentNode.getEmployeeSalaray()))
+					(sortedLinkedListHead.getEmployeeSalaray() <= currentEmployee.getEmployeeSalaray()))
 			{
 				if(sortedLinkedListHead == null)
 				{
-					currentNode.next = sortedLinkedListHead;
-					sortedLinkedListHead = currentNode;
+					currentEmployee.next = sortedLinkedListHead;
+					sortedLinkedListHead = currentEmployee;
 				}
-				else if(sortedLinkedListHead.getEmployeeSalaray() < currentNode.getEmployeeSalaray())
+				else if(sortedLinkedListHead.getEmployeeSalaray() < currentEmployee.getEmployeeSalaray())
 				{
-					currentNode.next = sortedLinkedListHead;
-					sortedLinkedListHead = currentNode;
+					currentEmployee.next = sortedLinkedListHead;
+					sortedLinkedListHead = currentEmployee;
 				}
-				else if((sortedLinkedListHead.getEmployeeSalaray() == currentNode.getEmployeeSalaray()) && 
-						(sortedLinkedListHead.getEmployeeAge() > currentNode.getEmployeeAge()))
+				else if((sortedLinkedListHead.getEmployeeSalaray() == currentEmployee.getEmployeeSalaray()) && 
+						(sortedLinkedListHead.getEmployeeAge() > currentEmployee.getEmployeeAge()))
 				{
-					currentNode.next = sortedLinkedListHead;
-					sortedLinkedListHead = currentNode;
+					currentEmployee.next = sortedLinkedListHead;
+					sortedLinkedListHead = currentEmployee;
 				}
 				else
 				{
-					Node temporary = sortedLinkedListHead;
-					while((temporary.next != null) && (temporary.next.getEmployeeSalaray() == currentNode.getEmployeeSalaray()) && 
-							(temporary.next.getEmployeeAge() < currentNode.getEmployeeAge()))
+					Employee temp = sortedLinkedListHead;
+					while((temp.next != null) && (temp.next.getEmployeeSalaray() == currentEmployee.getEmployeeSalaray()) && 
+							(temp.next.getEmployeeAge() < currentEmployee.getEmployeeAge()))
 					{
-						temporary = temporary.next;
+						temp = temp.next;
 					}
-					currentNode.next = temporary.next;
-					temporary.next = currentNode;
+					currentEmployee.next = temp.next;
+					temp.next = currentEmployee;
 				}
 			}
 			else
 			{
-				Node temporaryNode = sortedLinkedListHead;
-				while((temporaryNode.next != null) && 
-						(temporaryNode.next.getEmployeeSalaray() >= currentNode.getEmployeeSalaray()))
+				Employee temp = sortedLinkedListHead;
+				while((temp.next != null) && 
+						(temp.next.getEmployeeSalaray() >= currentEmployee.getEmployeeSalaray()))
 				{
-					if((temporaryNode.next.getEmployeeSalaray() == currentNode.getEmployeeSalaray()) &&
-							temporaryNode.next.getEmployeeAge() < currentNode.getEmployeeAge())
+					if((temp.next.getEmployeeSalaray() == currentEmployee.getEmployeeSalaray()) &&
+							temp.next.getEmployeeAge() < currentEmployee.getEmployeeAge())
 					{
-						temporaryNode = temporaryNode.next;
+						temp = temp.next;
 					}
-					else if(temporaryNode.next.getEmployeeSalaray() > currentNode.getEmployeeSalaray())
+					else if(temp.next.getEmployeeSalaray() > currentEmployee.getEmployeeSalaray())
 					{
-						temporaryNode = temporaryNode.next;
+						temp = temp.next;
 					}
 				}
 				
-				temporaryNode.next = currentNode;
-				temporaryNode.next.next = null;
+				temp.next = currentEmployee;
+				temp.next.next = null;
 			}
-			currentNode = nextNode;
+			currentEmployee = nextEmployee;
 		}
 		
 	}
-	
 }
-

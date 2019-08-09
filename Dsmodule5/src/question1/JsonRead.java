@@ -1,5 +1,4 @@
 package question1;
-
 import java.io.FileReader;
 import java.util.Iterator;
 import java.util.Map;
@@ -9,15 +8,15 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.*;
 
 /**
- * This class is used to read jason data.
+ * This class is used to read json data.
  */
 public class JsonRead {
 
 	BinarySearchTree binarySearchTree = new BinarySearchTree();
 
 	/**
-	 * This method is used to read jason file data.
-	 * @param filepath, this is path of jason file.
+	 * This method is used to read json file data.
+	 * @param filepath, this is path of json file.
 	 * @return, this return root of binary search tree.
 	 */
 	public Node Json(String filepath) {

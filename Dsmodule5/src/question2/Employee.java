@@ -1,28 +1,24 @@
 package question2;
 /**
- * This class represents a node in a linked list.
+ * Class for representing Employee node
  */
-public class Node {
+public class Employee {
 
-	double employeeSalary;
 	int employeeAge;
 	String employeeName;
-	Node next;
+	double employeeSalary;
+	Employee next;
 	
 	/**
 	 * Constructor to initialize the data members of the class
 	 * @param data
 	 */
-	public Node(double employeeSalary, int employeeAge ,String employeeName)
+	public Employee(String employeeName,int employeeAge ,double employeeSalary)
 	{
 		this.employeeSalary = employeeSalary;
 		this.employeeAge = employeeAge;
 		this.employeeName = employeeName;
 		this.next = null;
-	}
-
-	public double getEmployeeSalaray() {
-		return employeeSalary;
 	}
 
 	public int getEmployeeAge() {
@@ -33,9 +29,12 @@ public class Node {
 		return employeeName;
 	}
 
-	public Node getNext() {
+	public Employee getNext() {
 		return next;
 	}
 	
+	public double getEmployeeSalaray() {
+		return employeeSalary;
+	}
 	
 }
