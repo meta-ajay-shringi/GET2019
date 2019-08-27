@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="validation.js"></script>
+
+    <script>
+
+        var pdaily;
+        var pmonthly;
+        var pyearly;
+
+        function submitForm() {
+            var a = empFormValidation();
+
+            if (a == true) {
+                document.getElementById("1").innerHTML = "This is your registration id " + Math.floor((Math.random() * 10000) + 1);
+                document.getElementById("2").style.display = "block";
+            }
+
+        }
+
+        function prices() {
+            var a = document.getElementById("selectType").value;
+            document.getElementById("2").innerHTML = " Chose plan for " + document.getElementById("selectType").value;
+            document.getElementById("currency").style.display = "block";
+            switch (a) {
+                case "Cycle":
+                    pdaily = 5;
+                    pmonthly = 100;
+                    pyearly = 500;
+                    break;
+                case "MotorCycle":
+                    pdaily = 10;
+                    pmonthly = 200;
+                    pyearly = 1000;
+                    break;
+
+                case "FourWheelers":
+                    pdaily = 20;
+                    pmonthly = 500;
+                    pyearly = 3500;
+                    break;
+
+            }
+            document.getElementById("daily_price").innerHTML = pdaily;
+            document.getElementById("monthly_price").innerHTML = pmonthly;
+            document.getElementById("yearly_price").innerHTML = pyearly;
+
+        }
+
+        function showCurrency() {
+            document.getElementById("plan1").style.display = "block";
+            var currencyValue = document.getElementById("select_currency").value;
+
+            if (currencyValue == "INR") {
+                document.getElementById("daily_price").innerHTML = pdaily;
+                document.getElementById("dailyId").value = (pdaily / 70).toFixed(2);
+
+                document.getElementById("monthly_price").innerHTML = pmonthly;
+                document.getElementById("monthlyId").value = (pmonthly / 70).toFixed(2);
+
+                document.getElementById("yearly_price").innerHTML = pyearly;
+                document.getElementById("yearlyId").value = (pyearly / 70).toFixed(2);
+            }
+            else if (currencyValue == "USD") {
+
+                document.getElementById("daily_price").innerHTML = (pdaily / 70).toFixed(2);
+                document.getElementById("dailyId").value = (pdaily / 70).toFixed(2);
+
+                document.getElementById("monthly_price").innerHTML = (pmonthly / 70).toFixed(2);
+                document.getElementById("monthlyId").value = (pmonthly / 70).toFixed(2);
+
+                document.getElementById("yearly_price").innerHTML = (pyearly / 70).toFixed(2);
+                document.getElementById("yearlyId").value = (pyearly / 70).toFixed(2);
+            }
+            else if (currencyValue == "YEN") {
+                document.getElementById("daily_price").innerHTML = (pdaily / 0.68).toFixed(2);
+                document.getElementById("dailyId").value = (pdaily / 70).toFixed(2);
+
+                document.getElementById("monthly_price").innerHTML = (pmonthly / 0.68).toFixed(2);
+                document.getElementById("monthlyId").value = (pmonthly / 70).toFixed(2);
+
+                document.getElementById("yearly_price").innerHTML = (pyearly / 0.68).toFixed(2);
+                document.getElementById("yearlyId").value = (pyearly / 70).toFixed(2);
+            }
+
+        }
+
+        function changeFunc() {
+            document.getElementById("2").innerHTML = "Chose your plan";
+        }
+
+        function showPrice() {
+
+            var totalPrice;
+
+
+            if (document.getElementById("dailyId").checked)
+                totalPrice = document.getElementById("dailyId").value;
+            else if (document.getElementById("monthlyId").checked)
+                totalPrice = document.getElementById("monthlyId").value;
+            else if (document.getElementById("yearlyId").checked)
+                totalPrice = document.getElementById("yearlyId").value;
+
+            document.getElementById("currency").innerHTML = " Conratulation! for geting pass </br> Total Price " + totalPrice;
+
+        }
+
+
+
+    </script>
+
+    <style>
+        td {
+            padding: 15px;
+        }
+
+        textarea {
+            width: 175px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="1" align="center">
+        <form action="" method="POST" name="Emplopyeform">
+            <h1 align="center">Metacube Parking System</h1>
+            <h2 align="center">Employee’s details</h2>
+            <table align="center">
+                <tr>
+                    <td>Full Name :</td>
+                    <td>
+                        <input type="text" placeholder="Please enter full name" name="fullname" id="name" required>
+                        <br />
+                        <span id="ename"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td> Gender : </td>
+                    <td> <input type="radio" name="gender"> Male
+                        <input type="radio" name="gender"> Female </td>
+                </tr>
+
+                <tr>
+                    <td>Email :</td>
+                    <td><input type="email" placeholder="email" name="email" id="email">
+                        <br />
+                        <span id="eemail"></span>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>Password :</td>
+                    <td><input type="password" placeholder="password" name="password" id="password">
+                        </br>
+                        <span id="epassword"></span>
+                    </td>
+
+                </tr>
+
+                <tr>
+                    <td>Confirm Password :</td>
+                    <td><input type="password" placeholder="confirm password" name="confirmpassword"
+                            id="confirm_password">
+                        <br />
+                        <span id="econfirm_password"></span>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>Contact No. :</td>
+                    <td><input type="tel" placeholder="contact number" name="contactnumber" id="number">
+                        <br />
+                        <span id="enumber"></span>
+                    </td>
+                </tr>
+                <tr>
+
+                    <td align="center" colspan="2">
+                        <input type="button" value="register" onclick="submitForm()">
+                    </td>
+                </tr>
+            </table>
+
+
+        </form>
+    </div>
+
+
+
+    <div id="2" align="center" style="display: none">
+        <form action="" method="POST">
+            <h2 align="center"> vehicle details </h2>
+            <table align="center">
+                <tr>
+                    <td>Vehicle Name :</td>
+                    <td><input type="text" placeholder="Please enter vehicle name" name="vehiclename"></td>
+                </tr>
+                <tr>
+                    <td> type : </td>
+                    <td> <select id="selectType">
+                            <option value="" selected disabled hidden>Choose here</option>
+                            <option value="Cycle">Cycle</option>
+                            <option value="MotorCycle">MotorCycle</option>
+                            <option value="FourWheelers">Four Wheelers</option>
+                        </select> </td>
+                </tr>
+
+                <tr>
+                    <td>Vehicle Number :</td>
+                    <td><input type="text" placeholder="Vehicle number" name="vehiclenumber"></td>
+
+                </tr>
+                <tr>
+                    <td>Emplopye Id :</td>
+                    <td><input type="text" placeholder="Employe Id" name="employeId"></td>
+                </tr>
+
+                <tr>
+                    <td>Identification :</td>
+                    <td><textarea rows="4" cols="50">
+
+                                </textarea></td>
+                </tr>
+                <tr>
+
+                    <td align="center" colspan="2"><input type="submit" id="register" value="register"
+                            onclick="prices()"></td>
+                </tr>
+            </table>
+
+
+        </form>
+    </div>
+
+    <div align="center" id="currency" style="display: none">
+        <br />
+        Currency :
+        <select id="select_currency" onchange="showCurrency()">
+            <option value="" selected disabled hidden>Choose here</option>
+            <option value="INR">INR</option>
+            <option value="USD">USD</option>
+            <option value="YEN">YEN</option> <br />
+        </select>
+        <div align="center" id="plan1" style="display: none">
+            <br />
+            <table>
+
+                <tr>
+                    <th>Period</th>
+                    <th>Price</th>
+                </tr>
+
+                <tr>
+                    <td><input type="radio" name="plan" id="dailyId"> Daily </td>
+                    <td> <span id="daily_price"> </span> </td>
+                </tr>
+
+                <tr>
+                    <td><input type="radio" name="plan" id="monthlyId"> Monthly </td>
+                    <td> <span id="monthly_price"> </span> </td>
+                </tr>
+
+                <tr>
+                    <td><input type="radio" name="plan" id="yearlyId"> Yearly </td>
+                    <td> <span id="yearly_price"> </span> </td>
+                </tr>
+            </table>
+
+
+        </div>
+        <br />
+        <input type="submit" id="getPass" value="Get Pass" onclick="showPrice()">
+    </div>
+
+</body>
+
+</html>
