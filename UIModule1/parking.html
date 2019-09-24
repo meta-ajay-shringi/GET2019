@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Parking System</title>
+    <style>
+        div.SelectPricing {
+            border-style: solid;
+            border-width: 1px;
+            width: 20%;
+            height: 20%;
+            margin-top: 10px;
+        }
+
+        div.monthlyPrice {
+            border-style: solid;
+            border-width: 1px;
+            border-radius: 100%;
+            width: 60px;
+            height: 60px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <a href="#Employee_details">Add Employee</a>
+        <a href="#Vehicle_details">Add Vehicle</a>
+        <a href="#Feedback">Give feedback</a>
+        <a href="#Pricing">Pricing</a>
+    </nav>
+    <h1 align="center">Metacube Parking System</h1>
+    
+    <div align="center">
+        <img src="parking.png" width="50%">
+    </div>
+
+    <div align="center" id="Employee_details">
+        <h2>Employee Details </h2>
+        <div>
+            <label>Full Name :</label>
+            <input type="text" placeholder="Please enter full name" name="fullname" id="name" required>
+        </div>
+        <div>
+            <label>Gender : </label>
+            <input type="radio" name="gender"> Male
+            <input type="radio" name="gender"> Female
+        </div>
+        <div>
+            <label>Email :</label>
+            <input type="email" placeholder="email" name="email" id="email" required>
+        </div>
+        <div>
+            <label>Password :</label>
+            <input type="password" placeholder="password" name="password" id="password" required>
+        </div>
+        <div>
+            <label>Confirm Password :</label>
+            <input type="password" placeholder="confirm password" name="confirmpassword" id="confirm_password" required>
+        </div>
+        <div>
+            <label>Contact No. :</label>
+            <input type="tel" placeholder="contact number" name="contactnumber" id="number">
+        </div>
+        <div>
+            <input type="button" value="register" onclick="submitForm()">
+        </div>
+    </div>
+
+
+    <div align="center" id="Vehicle_details">
+        <h2>vehicle details</h2>
+        <div>
+            <label>Vehicle Make :</label>
+            <input type="text" placeholder="Please enter company name" required>
+        </div>
+        <div>
+            <label>Vehicle Model :</label>
+            <input type="text" placeholder="Please enter vehicle name" name="vehiclename" required>
+        </div>
+        <div>
+            <label>type :</label>
+            <select id="selectType">
+                <option value="" selected disabled hidden>Choose here</option>
+                <option value="Cycle">Cycle</option>
+                <option value="MotorCycle">MotorCycle</option>
+                <option value="FourWheelers">Four Wheelers</option>
+            </select>
+        </div>
+        <div>
+            <label>Vehicle Number :</label>
+            <input type="text" placeholder="Vehicle number" name="vehiclenumber" required>
+        </div>
+        <div>
+            <label>Emplopye Id :</label>
+            <input type="text" placeholder="Employe Id" name="employeId" required>
+        </div>
+        <div>
+            <label>Identification :</label>
+            <textarea rows="4" cols="50">  </textarea>
+        </div>
+        <div>
+
+            <input type="submit" id="register" value="register" onclick="prices()">
+        </div>
+    </div>
+
+
+
+    <div align="center" id="Feedback">
+        <h2>Get In Touch</h2>
+        <div>
+            <label>Full Name :</label>
+            <input type="text" placeholder="Please enter full name" required>
+        </div>
+        <div>
+            <label>Email :</label>
+            <input type="email" placeholder="Please enter email" required>
+        </div>
+        <div>
+            <label>Subject :</label>
+            <input type="text" required>
+        </div>
+        <div>
+            <label>Message</label>
+            <textarea rows="4" cols="50">  </textarea>
+        </div>
+        <div>
+            <input type="submit" value="Send Email">
+        </div>
+    </div>
+
+
+
+    <div id="Pricing" align="center">
+        <h2>Pricing</h2>
+
+
+        <div class="SelectPricing">
+            <div>
+                <label> <strong>Cycle</strong></label>
+            </div>
+            <div class="monthlyPrice">
+                <label>$100 Monthly</label>
+            </div>
+            <div>
+                <label>$5 Daily</label> <br />
+                <label>$100 Monthly</label><br />
+                <label>$500 Yearly</label>
+            </div>
+            <div>
+                <input type="submit" value="PURCHASE NOW">
+            </div>
+        </div>
+
+
+        <div class="SelectPricing">
+            <div>
+                <label><strong>MotorCycle</strong></label>
+            </div>
+            <div class="monthlyPrice">
+                <label>$200 Monthly</label>
+            </div>
+            <div>
+                <label>$100 Daily</label><br />
+                <label>$200 Monthly</label><br />
+                <label>$1000 Yearly</label>
+            </div>
+            <div>
+                <input type="submit" value="PURCHASE NOW">
+            </div>
+        </div>
+
+
+        <div class="SelectPricing">
+            <div>
+                <label><strong>Four Wheelers</strong></label>
+            </div>
+            <div class="monthlyPrice">
+                <label>$500 Monthly</label>
+            </div>
+            <div>
+                <label>$20 Daily</label><br />
+                <label>$500 Monthly</label><br />
+                <label>$3500 Yearly</label>
+            </div>
+            <div>
+                <input type="submit" value="PURCHASE NOW">
+            </div>
+        </div>
+
+
+    </div>
+</body>
+
+</html>
