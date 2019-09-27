@@ -1,0 +1,315 @@
+body
+{
+    margin: 0px;
+}
+
+.navigation{
+    display: flex;
+   justify-content: space-between;
+   padding-top: 20px;
+}
+
+#nav_bg header
+{
+    padding: 20px 230px;
+}
+.nav_link {
+    padding-left: 20px;
+    color: white;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#nav_bg {
+    height: 960px;
+    background-size: cover;
+}
+
+.fab {
+    padding-left: 10px;
+}
+
+.home {
+    display: flex;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    justify-content: space-evenly;
+}
+
+#phone1 {
+    
+   
+}
+
+#span_text {
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    font-size: 60px;
+    font-weight: bold;
+}
+
+#weather_text {
+ 
+    padding-left: 80px;
+    padding-top: 70px;
+    margin-bottom: 40px;
+   
+}
+
+.get_app {
+    display: flex;
+    flex-direction: column;
+}
+
+.get_app_link {
+    color: white;
+    margin-left: 80px;
+} 
+
+#download {
+    
+  background-color: #f44336;
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+#feature {
+    background-color: #27339e;
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.heading {
+
+    text-align: center;
+}
+
+.heading_name {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #6388fa;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.section1 {
+
+    margin-top: 70px;
+   
+}
+
+.heading_text {
+    color: darkgray;
+}
+
+.perfect_features {
+    margin-top: 100px;
+
+   
+    display: flex;
+
+    padding-left: 120px;
+}
+
+.perfect_features_span {
+    font-weight: bold;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+   
+    
+}
+
+.perfect_features_p {
+   margin-left: 70px;
+
+   width: 350px;
+  
+}
+
+.icon {
+    color: rgb(221, 135, 74);
+    font-size: 60px;
+    padding-right: 40px;
+}
+
+.heading_text_p {
+    color: darkgray;
+    margin-left: 27%;
+}
+
+.cloud_section {
+    display: flex;
+    padding-left: 23%;
+
+    margin-top: 8%;
+    margin-bottom: 10%;
+}
+
+.cloud_img {
+    display: flex;
+    flex-direction: column;
+    margin-left: 12%;
+}
+
+.cloud_span {
+
+    margin-top: 5%;
+    font-size: 35px;
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+    color: rgb(39, 38, 38);
+}
+
+.cloud_p {
+    font-size: 25px;
+    color: darkgray;
+    width: 65%;
+}
+
+.sun {
+  margin-right: 300px;
+  padding-left: 0;
+}
+
+.cloud_img_margin {
+    margin-left: 250px;
+}
+
+#image1 {
+    transform: scale(.7) translate(260px,0px) skewY(5deg);
+    }
+    
+    #image2 {
+    transform: scale(.85) translate(50px,0px) skewY(2deg);
+    }
+    
+    #image3 {
+    transform: translate(-630px,0)
+    }
+    
+    #image4 {
+    transform: scale(.85) translate(30px,0px) skewY(-2deg);
+    }
+    
+    #image5 {
+    transform: scale(.7) translate(740px,0px) skewY(-5deg);
+    }
+
+    .flex_container {
+        margin-top: 10%;
+        margin-bottom: 10%;
+        display: flex;
+    }
+
+    .reviews {
+        display: flex;
+        margin-top: 5%;
+    }
+
+    .reviews_p {
+
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 20px;
+        font-weight: bold;
+        color: rgb(39, 38, 38);
+    }
+
+    .reviews_article1 {
+
+        margin-right: 60px;
+
+    }
+  .reviews {
+      margin-left: 330px;
+  }
+    .reviews_article2 {
+
+    }
+
+    .reviews_span {
+        font-weight: bold;
+    }
+
+    .icon_left {
+        float: left;
+        color: #6388fa;
+    }
+
+    .icon_right {
+        float: right;
+        color: #6388fa;
+    }
+
+    .downlode {
+        display: flex;
+        background-image: url('Images/downloadbg.png');
+        height: 300px;
+        padding-left: 220px;
+        padding-top: 100px;
+        margin-top: 100px;
+    }
+
+    .downlode_app {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .googleplay {
+        display: flex;
+    }
+
+    #downlode_app_p {
+
+        color: white;
+        font-size: 38px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: bold;
+        margin-right: 120px;
+    }
+
+    #downlode_app_span {
+        color: white;
+        font-size: 15px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: bold;
+    }
+
+
+    #appstor {
+        margin-right: 10px;
+    }
+
+    #footer {
+        background-color: rgb(39, 38, 38);
+        height: 150px;
+        padding : 0px 300px;
+    }
+
+    .fa-facebook-f  {
+        
+      color: white;
+    }
+
+    .fa-instagram {
+        color: white;
+    }
+
+    .fa-google-plus-g {
+        color: white;
+    }
+
+    #all_right {
+        text-align: center;
+        margin-top: 32px;
+        color: darkgray;
+    }
+
+    #footer_id{
+        border-bottom: 0.5px solid rgb(197, 194, 194);
+        padding-bottom: 40px;
+    }
