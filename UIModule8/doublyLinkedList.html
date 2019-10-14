@@ -23,12 +23,12 @@
             else {
                 var current = this.head;
                 while (current.next != null) {
-                    previousNode = current;
+                  
                     current = current.next;
                 }
 
                 current.next = newNode;
-                current.pre = previousNode;
+                newNode.pre = current;
             }
 
         }
