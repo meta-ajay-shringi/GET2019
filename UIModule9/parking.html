@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Metacube Parking System</title>
+    <script src="typescript.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <!-- navigation bar -->
+    <div id="navigation">
+        <nav>
+            <ul>
+                <li><a href="#" onclick="goToEmpRegister();return false;">Add Employee</a> </li>
+            </ul>
+        </nav>
+        <br>
+    </div>
+
+    <!-- main heading -->
+    <div id="main-head" class="mt-5">
+        <h1>Metacube Parking System</h1><br />
+    </div>
+
+    <!-- image section -->
+    <div align="center" class="mt-5">
+        <img src="parking.png" height="500px" id="coverImg" />
+    </div>
+
+    <div class="container mt-5 " id="contain">
+
+        <div class="form-group display-4" style="display:none" id="label">
+            <label id="labelText">Hey , Happy to register you . May i know your name ?</label>
+        </div>
+
+        <div >
+            <label id="error" class="text-danger"></label>
+        </div>
+        <!--employee form -->
+        <form>
+            <div class="form-group" id="empName" style="display: none">
+                <input type="text" class="form-control w-50" placeholder="Your name" name="ename" id="ename" required>
+            </div>
+            <div class="form-group" id="empGender" style="display: none">
+                <div>
+                    <input type="radio" name="egender" value="Male" id="male-radio">&nbspMale&nbsp&nbsp
+                    <input type="radio" name="egender" value="Female">&nbspFemale
+                </div>
+            </div>
+            <div class="form-group" id="empEmail" style="display: none">
+                <input type="email" class="form-control w-50" placeholder="enter your email" name="eemail" id="eemail"
+                    type="email" required>
+            </div>
+            <div class="form-group" id="empPass" style="display: none">
+                <input type="Password" onkeyup="validatePassword()" class="form-control w-50" placeholder="enter password" name="epass" id="epass"
+                    required>
+            </div>
+            <div class="form-group" id="empCnfrmPass" style="display: none">
+                <input type="Password" class="form-control w-50" placeholder="re enter password" name="ecnfrmpass"
+                    id="ecnfrmpass" required>
+            </div>
+            <div class="form-group" id="empContact" style="display: none">
+                <input type="text" class="form-control w-50" placeholder="enter your number" name="ecnumber"
+                    id="ecnumber" maxlength="10" required>
+            </div>
+            <div class="form-group next" style="display: none" id="next1">
+                <button type="button" class="btn btn-primary mt-2"  onclick="goToVehForm()">Next</button>
+            </div>
+
+        </form>
+
+
+
+        <!-- Vehice registration form -->
+        <div id="vehicle_form_head" style="display:none">
+            <h2>Register Vehicle</h2>
+        </div>
+        <form>
+            <div class="form-group" id="vehName" style="display: none">
+                <input type="text" class="form-control w-50" placeholder="Vehicle name" name="vname" id="vname"
+                    required>
+            </div>
+            <div class="form-group" id="vehType" style="display: none">
+                <select class="form-control w-50" id="vtype" name="vtype" >
+                    <option value="" selected disabled hidden>Choose here</option>
+                    <option value="Cycle">Cycle</option>
+                    <option value="Motocycle">Motocycle</option>
+                    <option value="Car">Car</option>
+                </select>
+            </div>
+            <div class="form-group" id="vehNumber" style="display: none">
+                <input type="text" class="form-control w-50" placeholder="Vehicle number" name="vnumber" id="vnumber"
+                    required>
+            </div>
+            <div class="form-group" id="vehDescription" style="display: none">
+                <textarea class="form-control w-50" placeholder="enter vehicle Identification" rows="3" name="videntity"
+                    id="videntity" required></textarea>
+            </div><br>
+            <div class="form-group next" style="display: none" id="next2">
+                <button type="button" onclick="goToPlanForm()" class="btn btn-primary mt-2">Next</button>
+            </div>
+        </form>
+
+        <form>
+            <div style="display:none">
+                <h2>Choose your plan</h2>
+            </div>
+            <div class="form-group" id="currType" style="display: none">
+                <select id="currency" class="form-control w-50" onchange="goToShowPrice()">
+                    <option value="" selected disabled hidden>Choose here</option>
+                    <option value="INR">INR</option>
+                    <option value="USD">USD</option>
+                    <option value="YEN">YEN</option>
+                </select>
+            </div>
+            <div class="form-group" id="plans" style="display: none">
+                <input type="radio" name="passtype">&nbsp;Daily - <label id="daily"></label><br />
+                <input type="radio" name="passtype">&nbsp;Monthly - <label id="monthly"></label><br />
+                <input type="radio" name="passtype">&nbsp;Yearly - <label id="yearly"></label><br><br />
+            </div>
+            <div class="form-group next" style="display: none" id="next3">
+                <button type="button" onclick="goToSubmitForm()" class="btn btn-primary mt-2">Submit</button>
+            </div>
+        </form>
+        
+
+    </div>
+</body>
+
+</html>
